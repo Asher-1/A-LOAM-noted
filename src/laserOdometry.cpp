@@ -533,7 +533,7 @@ int main(int argc, char **argv)
                     printf("solver time %f ms \n", t_solver.toc());
                 }
                 printf("optimization twice time %f \n", t_opt.toc());
-                // 这里的w_curr 实际上是 w_last
+                // 这里右边的w_curr 实际上是 w_last
                 t_w_curr = t_w_curr + q_w_curr * t_last_curr;
                 q_w_curr = q_w_curr * q_last_curr;
             }

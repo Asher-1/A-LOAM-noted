@@ -370,6 +370,7 @@ void laserCloudHandler(const sensor_msgs::PointCloud2ConstPtr &laserCloudMsg)
                     }
                 }
             }
+            
             // 下面开始挑选面点
             int smallestPickedNum = 0;
             for (int k = sp; k <= ep; k++)
@@ -496,7 +497,7 @@ int main(int argc, char **argv)
     ros::NodeHandle nh;
     // 从配置文件中获取多少线的激光雷达
     nh.param<int>("scan_line", N_SCANS, 16);
-    // 最小有效距离
+    // 最小有效距离 unit：m
     nh.param<double>("minimum_range", MINIMUM_RANGE, 0.1);
 
     printf("scan line number %d \n", N_SCANS);
